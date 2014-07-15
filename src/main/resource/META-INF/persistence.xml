@@ -7,7 +7,9 @@
         <persistence-unit name="cn.v5cn.spring_jpa">
             <properties>
                 <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+                <!-- 打印完整Sql所需要配置的url，会在原有url的jdbc:后面添加log4jdbc -->
 				<property name="hibernate.connection.url" value="jdbc:log4jdbc:h2:./test" />
+				<!-- 打印完整SQL所需要配置的driverClassName，这里配置的是log4j的jdbc -->
 				<property name="hibernate.connection.driver_class" value="net.sf.log4jdbc.DriverSpy" />
 				<property name="hibernate.connection.username" value="sa" />
 				<property name="hibernate.connection.password" value="" />

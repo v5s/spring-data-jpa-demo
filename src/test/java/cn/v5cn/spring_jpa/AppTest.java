@@ -1,7 +1,5 @@
 package cn.v5cn.spring_jpa;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,8 @@ import cn.v5cn.spring_jpa.service.UserService;
 
 
 /**
- * Unit test for simple App.
+ * Spring test 使用方法
+ * 需要junit 4.11以上的版本
  */
 @ContextConfiguration(locations={"classpath:applicationContext.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
