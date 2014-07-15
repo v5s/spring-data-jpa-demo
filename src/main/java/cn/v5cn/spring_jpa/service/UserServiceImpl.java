@@ -2,6 +2,7 @@ package cn.v5cn.spring_jpa.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.v5cn.spring_jpa.dao.UserDao;
 import cn.v5cn.spring_jpa.entity.User;
@@ -13,6 +14,7 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	
 	@Override
+	@Transactional
 	public User save(User user) {
 		return userDao.save(user);
 	}
