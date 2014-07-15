@@ -1,38 +1,39 @@
 package cn.v5cn.spring_jpa;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import cn.v5cn.spring_jpa.entity.User;
+import cn.v5cn.spring_jpa.service.UserService;
+
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+@ContextConfiguration(locations={"classpath:applicationContext.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
+public class AppTest {
+	@Autowired
+	private UserService userService;
+		
+	@Test
+    public void insert(){
+		userService.save(new User("赵六","lisi","123456789"));
     }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	@Test
+	public void findAll(){
+		Iterable<User> result = userService.findAll();
+		for(User user : result){
+			System.out.println(user.getId());
+			System.out.println(user.getFirstName());
+			System.out.println(user.getLastName());
+			System.out.println(user.getPhone());
+			System.out.println("++++++++++++++++++");
+		}
+	}
 }
