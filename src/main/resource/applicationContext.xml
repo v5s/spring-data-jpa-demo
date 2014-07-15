@@ -23,8 +23,8 @@
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="username" value="sa"></property>
 		<property name="password" value=""></property>
-		<property name="url" value="jdbc:h2:./test"></property>
-		<property name="driverClassName" value="org.h2.Driver"></property>
+		<property name="url" value="jdbc:log4jdbc:h2:./test"></property>
+		<property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"></property>
     </bean>
     
     
