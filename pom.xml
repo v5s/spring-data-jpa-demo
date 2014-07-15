@@ -51,6 +51,7 @@
 			<artifactId>h2</artifactId>
 			<version>1.4.180</version>
 		</dependency>
+		<!-- 打印完整执行的SQL语句所需要的jar包 -->
 		<dependency>
 			<groupId>org.lazyluke</groupId>
 			<artifactId>log4jdbc-remix</artifactId>
@@ -66,6 +67,7 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.7</version>
 		</dependency>
+		<!-- ./日志jar包 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
